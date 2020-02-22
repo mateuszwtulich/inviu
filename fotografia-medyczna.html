@@ -11,7 +11,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href="style.css">
-    <title>Hello, world!</title>
+    <title>inviu - fotografia - film</title>
 </head>
 
 <body>
@@ -77,57 +77,116 @@
     <main>
         <section>
 
+
             <div class="m-4">
                 <div class="bg-white shadow-lg">
                     <article class="p-4 album">
                         <h1 class="h2 text-center mb-5 mt-3">Fotografia medyczna</h1>
                         <div class="row col-12 p-0 m-0">
                             <div class="col-lg-4 col-md-6 mb-5">
-                                <div class="card shadow p-0">
-                                    <div class="box">
-                                        <img src="assets/img1.jpg" class="card-img-top img-fluid" alt=" ...">
-                                    </div>
+                                <div class="card shadow p-0 box">
+                                    <img src="assets/img1.jpg" class="card-img-top img-fluid"
+                                        onclick="openModal();currentSlide(1)" alt=" ...">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 mb-5">
-                                <div class="card shadow p-0">
-                                    <div class="box">
-                                        <img src="assets/img3.jpg" class="card-img-top img-fluid" alt=" ...">
-                                    </div>
+                                <div class="card shadow p-0 box">
+                                    <img src="assets/img3.jpg" class="card-img-top img-fluid"
+                                        onclick="openModal();currentSlide(2)" alt=" ...">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 mb-5">
-                                <div class="card shadow p-0">
-                                    <div class="box">
-                                        <img src="assets/img1.jpg" class="card-img-top img-fluid" alt=" ...">
-                                    </div>
+                                <div class="card shadow p-0 box">
+                                    <img src="assets/img1.jpg" class="card-img-top img-fluid"
+                                        onclick="openModal();currentSlide(3)" alt=" ...">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 mb-5">
-                                <div class="card shadow p-0">
-                                    <div class="box">
-                                        <img src="assets/img3.jpg" class="card-img-top img-fluid" alt=" ...">
-                                    </div>
+                                <div class="card shadow p-0 box">
+                                    <img src="assets/img3.jpg" class="card-img-top img-fluid"
+                                        onclick="openModal();currentSlide(4)" alt=" ...">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 mb-5">
-                                <div class="card shadow p-0">
-                                    <div class="box">
-                                        <img src="assets/img1.jpg" class="card-img-top img-fluid" alt=" ...">
-                                    </div>
+                                <div class="card shadow p-0 box">
+                                    <img src="assets/img1.jpg" class="card-img-top img-fluid"
+                                        onclick="openModal();currentSlide(5)" alt=" ...">
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 mb-5">
-                                <div class="card shadow p-0">
-                                    <div class="box">
-                                        <img src="assets/img3.jpg" class="card-img-top img-fluid" alt=" ...">
-                                    </div>
+                                <div class="card shadow p-0 box">
+                                    <img src="assets/img3.jpg" class="card-img-top img-fluid"
+                                        onclick="openModal();currentSlide(6)" alt=" ...">
                                 </div>
                             </div>
                         </div>
                     </article>
                 </div>
             </div>
+        </section>
+        <section>
+            <!-- The Modal/Lightbox -->
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 6</div>
+                        <img src="assets/img1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 6</div>
+                        <img src="assets/img3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 6</div>
+                        <img src="assets/img1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 6</div>
+                        <img src="assets/img3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">5 / 6</div>
+                        <img src="assets/img1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">6 / 6</div>
+                        <img src="assets/img3.jpg" style="width:100%">
+                    </div>
+
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <!-- Caption text -->
+                    <!-- <div class="caption-container">
+                        <p id="caption"></p>
+                    </div> -->
+<!-- 
+                    <div class="column">
+                        <img class="demo" src="assets/img1.jpg" onclick="currentSlide(1)" alt="Nature">
+                    </div>
+                    <div class="column">
+                        <img class="demo" src="assets/img3.jpg" onclick="currentSlide(2)" alt="Snow">
+                    </div>
+                    <div class="column">
+                        <img class="demo" src="assets/img1.jpg" onclick="currentSlide(3)" alt="Mountains">
+                    </div>
+                    <div class="column">
+                        <img class="demo" src="assets/img3.jpg" onclick="currentSlide(4)" alt="Lights">
+                    </div>
+                    <div class="column">
+                        <img class="demo" src="assets/img1.jpg" onclick="currentSlide(5)" alt="Mountains">
+                    </div>
+                    <div class="column">
+                        <img class="demo" src="assets/img3.jpg" onclick="currentSlide(6)" alt="Lights">
+                    </div> -->
         </section>
     </main>
     <footer>
