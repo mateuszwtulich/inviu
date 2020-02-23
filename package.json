@@ -1,0 +1,33 @@
+{
+  "name": "inviu",
+  "version": "1.0.0",
+  "description": "Webpage for inviu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/mateuszwtulich/inviu.git"
+  },
+  "keywords": [
+    "inviu"
+  ],
+  "author": "Mateusz Wtulich",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.4.1",
+    "node-sass": "^4.13.1",
+    "popper.js": "^1.16.1",
+    "sass-loader": "^8.0.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "bootstrap": "^4.4.1"
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+
+$primary: #59595B;
+$secondary: #E2007A;
+$bg-color: #EFEFEF;
+
+body{
+    background: $bg-color;
+    font-family: 'Raleway', sans-serif;
+    color: $primary;
+}
