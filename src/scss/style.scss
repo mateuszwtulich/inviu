@@ -1,15 +1,228 @@
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+// @import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+// @import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+// @import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+// @import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+// @import "../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
 
 $primary: #59595B;
+$primary-dark: #151517;
+$primary-light: #CFCFCF;
 $secondary: #E2007A;
+$secondary-dark: #b00047;
 $bg-color: #EFEFEF;
+$font: 'Raleway', sans-serif;
+$white: #fff;
 
 body{
     background: $bg-color;
-    font-family: 'Raleway', sans-serif;
+    font-family: $font;
     color: $primary;
+
+    #top{
+        z-index: 2 !important;
+
+        .navbar{
+
+            .navbar-toggler{
+                border-color: $primary !important
+            }
+            
+            .nabar-toggler:hover{
+                background-color: $primary-light !important;
+            }
+
+            .nav-item{
+                padding-left: 10px;
+                -moz-border-radius: 0px;
+                -webkit-border-radius: 0px;
+                border-radius: 0px;
+                margin: 0;
+            }
+
+            .nav-flex-icons a:hover, .nav-flex-icons a:active{
+                color: $secondary-dark !important;
+            }
+
+            i.fa{
+                border-radius: 60px;
+                box-shadow: 0px 0px 5px $secondary-dark;
+                padding: 0.3em 0.4em;
+            }
+    
+            i.fa:hover{
+                box-shadow: $secondary-dark;
+                background-color: $secondary;
+                color: $white
+              }
+    
+            i.fa-facebook{
+                border-radius: 60px;
+                box-shadow: 0px 0px 5px $secondary-dark;
+                padding: 0.3em 0.54em;
+            }
+
+            #navbarSocialMedia li a{
+                color: $secondary !important;
+            }
+
+            .navbar-nav{
+
+                #top-menu li.active a {
+                    color: $primary-dark !important;
+                  }
+            
+                .dropdown-menu{
+                    
+                    .dropdown-item:hover{
+                        background-color: $primary-light !important;
+                        opacity: 1;
+                        cursor: pointer;
+                    }
+
+                    .collapsing{
+                        display: block;
+                    }
+                }
+
+                a:hover, a:active{
+                    color: $primary-dark !important;
+
+                }
+
+                li a{
+                    text-shadow: $primary;
+                    color:  $primary !important;
+                    cursor: pointer !important;
+                    font-size: large;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    #content{
+        z-index: 1 !important;
+
+        h1{
+            color: $primary;
+            font-size: xx-large;
+            font-weight: 500;
+        }
+
+        #carouselIndicators{
+            padding-top: 5.75rem;
+
+            .carousel-inner{
+                width:100%;
+                max-height: 680px !important;
+
+                .carousel-item {
+                    width:100%;
+                    max-height: 680px !important;
+
+                    .carousel-caption {
+
+                        h5 {
+                            letter-spacing: 4px;
+                            text-shadow: 0px 0px 4px $primary-dark;
+                            font-weight: 500;
+                            font-size: 50px;
+                        }
+
+                        a {
+                            position: static;
+                            font-size: x-large;
+                            margin-top: 3%;
+                            margin-bottom: 10%;
+                            text-shadow: $primary;
+                            border-color: $white;
+                            color: $primary;
+                            opacity: 85%;
+                            background-color: $white !important;
+                            -moz-border-radius: 0px;
+                            -webkit-border-radius: 0px;
+                            border-radius: 0px;
+                        }
+
+                        a:hover, .box button:hover{
+                            background-color: $primary !important;
+                            border-color: $primary;
+                            opacity: 90%;
+                            color: $white;
+                        }
+                    }
+                }
+            }           
+        }
+
+        #scroll-oNas{
+            background: url(../images/onas.jpg) no-repeat fixed 100%;
+            background-position: center;
+            background-size: cover;
+
+            h1{
+                padding-top: 3%;
+            }
+
+            #oNasText{
+                padding-left: 30%;
+                padding-right: 30%;
+                padding-bottom: 5%;
+                text-align: justify;
+              }
+            
+              @media (max-width: 1200px) {
+                #oNasText {
+                  padding-left: 26%;
+                  padding-right: 26%;
+                }
+              }
+            
+              @media (max-width: 967px) {
+                #oNasText {
+                  padding-left: 18%;
+                  padding-right: 18%;
+                }
+              }
+            
+              @media (max-width: 732px) {
+                #oNasText {
+                  padding-left: 9%;
+                  padding-right: 9%;
+                }
+              }
+        }
+
+        #naszeProjekty{
+
+            .card-title a{
+                font-size: 25px;
+                color: #59595B;
+            }
+
+            .card-title:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            .card-text{
+                text-align: justify;
+            }
+
+            .box button{
+                position: absolute;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                top: 30%;
+                left: 50%;
+                transition: transform .5s ease;
+                text-align: center;
+                opacity: 0;
+            }
+
+            .box:hover button{
+                opacity: 1;
+            }
+        }
+    }
 }

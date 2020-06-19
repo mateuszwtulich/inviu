@@ -56,16 +56,20 @@ gulp.task('js', async () =>
 //         .pipe(gulp.dest('assets/webfonts'))
 // );
 
-gulp.task('serve', gulp.parallel('sass', 'js'), async() => {
+gulp.task('serve', gulp.series('sass', 'js', async() => {
 
     browserSync.init({
-        server: "./src",
-        browser: "[chrome.exe]"
+        server: { 
+            baseDir: "./src"
+        },
+        chrome: '–browser "chrome.exe"'
+        // open: false,
     });
 
-    gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], gulp.series(['sass']));
-    gulp.watch("src/*.html").on('change', browserSync.reload);
-})
+    gulp.watch(['src/js/animation.js'], gulp.series('js'));
+    gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], gulp.series('sass'));
+    gulp.watch(["src/*.html"]).on('change', browserSync.reload);
+}))  
 
 gulp.task('default', gulp.parallel('copyHtml', 'imageMin', 'minify', 'sassProd', 'jsProd'));
 
