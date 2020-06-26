@@ -17,6 +17,9 @@ body {
   background: $bg-color;
   font-family: $font;
   color: $primary;
+  max-width: 1460px;
+  margin-left: auto;
+  margin-right: auto;
 
   #fixed-button {
     position: absolute;
@@ -29,9 +32,13 @@ body {
   }
 
   #top {
-    z-index: 2 !important;
+    z-index: 1 !important;
 
     .navbar {
+      max-width: 1460px;
+      margin-left: auto;
+      margin-right: auto;
+      
       .navbar-toggler {
         border-color: $primary !important;
       }
@@ -126,7 +133,7 @@ body {
     }
 
     #carouselIndicators {
-      padding-top: 5.75rem;
+      padding-top: 7.2rem;
 
       .carousel-inner {
         width: 100%;
@@ -171,6 +178,10 @@ body {
       }
     }
 
+    .main-section{
+      margin: 2rem;
+    }
+
     #scroll-oNas {
       background: url(../images/onas.jpg) no-repeat fixed 100%;
       background-position: center;
@@ -181,30 +192,30 @@ body {
       }
 
       #oNasText {
-        padding-left: 30%;
-        padding-right: 30%;
+        padding-left: 29%;
+        padding-right: 29%;
         padding-bottom: 5%;
         text-align: justify;
       }
 
       @media (max-width: 1200px) {
         #oNasText {
-          padding-left: 26%;
-          padding-right: 26%;
+          padding-left: 16%;
+          padding-right: 16%;
         }
       }
 
       @media (max-width: 967px) {
         #oNasText {
-          padding-left: 18%;
-          padding-right: 18%;
+          padding-left: 10%;
+          padding-right: 10%;
         }
       }
 
       @media (max-width: 732px) {
         #oNasText {
-          padding-left: 9%;
-          padding-right: 9%;
+          padding-left: 7%;
+          padding-right: 7%;
         }
       }
     }
@@ -271,6 +282,7 @@ body {
 
           .card-title a {
             font-size: 25px;
+            font-weight: 500;
             color: #59595b;
           }
 
@@ -384,6 +396,7 @@ body {
     }
 
     #footerContent {
+      margin: 2rem 2rem 0;
       color: #fff;
       background-color: #e2007a;
       /* background-color: #8C8C8E !important; */
@@ -405,6 +418,36 @@ body {
         color: #e2007a;
         background-color: #fff;
       }
+    }
+  }
+}
+
+#biznesowa{
+  padding-top: 7.2rem;
+
+  #content{
+    margin: 2rem;
+  }
+}
+
+#medyczna{
+  padding-top: 7.2rem;
+
+  #content{
+    margin: 2rem;
+  }
+}
+
+#film{
+  padding-top: 7.2rem;
+
+  #content{
+    margin: 2rem;
+
+    .flex-row{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
     }
   }
 }

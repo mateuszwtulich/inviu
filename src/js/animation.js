@@ -33,6 +33,33 @@ window.onscroll = function() {
     }, 1000);
 
   });
+
+  $(document).ready(function(){
+    $(".biznesowa").click(function(){
+      $("#main").load("biznesowa.html");
+      $('html, body').stop().animate({
+        scrollTop: 0
+    }, 200);
+    });
+  });
+
+  $(document).ready(function(){
+    $(".medyczna").click(function(){
+      $("#main").load("medyczna.html");
+      $('html, body').stop().animate({
+        scrollTop: 0
+    }, 200);
+    });
+  });
+
+  $(document).ready(function(){
+    $(".film").click(function(){
+      $("#main").load("film.html");
+      $('html, body').stop().animate({
+        scrollTop: 0
+    }, 200);
+    });
+  });
  
   // Open the Modal
 function openModal() {
