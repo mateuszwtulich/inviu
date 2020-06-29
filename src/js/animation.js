@@ -41,6 +41,12 @@ window.onscroll = function() {
  
  });
 
+ function toTop(){
+  $('html, body').stop().animate({
+    scrollTop: 0
+}, 1000);
+ }
+
  function toBiznesowa(){
   $("#main").load("biznesowa.html");
   $('html, body').stop().animate({
