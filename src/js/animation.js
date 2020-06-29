@@ -13,54 +13,71 @@ window.onscroll = function() {
     }
   }
 
-  $('a[href^="#"]').on('click', function(event) {
-    var target = $(this.getAttribute('href'));
-    if( target.length ) {
-        event.preventDefault();
-        $('html, body').stop().animate({
-            scrollTop: target.offset().top - 98
-        }, 1000);
-    }
-});
+//   $('a[href^="#"]').on('click', function(event) {
+//     var target = $(this.getAttribute('href'));
+//     if( target.length ) {
+//         event.preventDefault();
+//         $('html, body').stop().animate({
+//             scrollTop: target.offset().top - 150
+//         }, 1000);
+//     }
+// });
 
- $(document).ready(function($) {
-  var page_url = window.location.href;
-  var page_id = page_url.substring(page_url.lastIndexOf("#")+1);
-  window.console.log(page_url);
+//  $(document).ready(function($) {
+//   var page_url = window.location.href;
+//   var page_id = page_url.substring(page_url.lastIndexOf("#")+1);
+//   window.console.log(page_url);
 
-    $('html, body').stop().animate({
-        scrollTop: $("#scroll-" + page_id).offset().top - 98
-    }, 1000);
+//     $('html, body').stop().animate({
+//         scrollTop: $("#scroll-" + page_id).offset().top + 50
+//     }, 1000);
 
-  });
+//   });
 
-  $(document).ready(function(){
-    $(".biznesowa").click(function(){
-      $("#main").load("biznesowa.html");
-      $('html, body').stop().animate({
-        scrollTop: 0
-    }, 200);
-    });
-  });
 
   $(document).ready(function(){
-    $(".medyczna").click(function(){
-      $("#main").load("medyczna.html");
-      $('html, body').stop().animate({
-        scrollTop: 0
-    }, 200);
-    });
-  });
-
-  $(document).ready(function(){
-    $(".film").click(function(){
-      $("#main").load("film.html");
-      $('html, body').stop().animate({
-        scrollTop: 0
-    }, 200);
-    });
-  });
+   
+    $('#main').load("main-page.html");
  
+ });
+
+ function toBiznesowa(){
+  $("#main").load("biznesowa.html");
+  $('html, body').stop().animate({
+    scrollTop: 0
+}, 200);
+};
+
+function toMedyczna(){
+  $("#main").load("medyczna.html");
+  $('html, body').stop().animate({
+    scrollTop: 0
+}, 200);
+};
+
+function toFilm(){
+  $("#main").load("film.html");
+  $('html, body').stop().animate({
+    scrollTop: 0
+}, 200);
+};
+
+  $(document).ready(function(){
+    $(".main-page").click(function(){
+      $("#main").load("main-page.html");
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 115
+            }, 1000);
+        }
+    });
+    });
+  });
+
+
   // Open the Modal
 function openModal() {
   document.getElementById("myModal").style.display = "block";
