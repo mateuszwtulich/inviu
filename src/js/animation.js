@@ -1,17 +1,17 @@
-window.onscroll = function() {
-    growShrinkLogo()
-  };
-  
-  function growShrinkLogo() {
-    var Logo = document.getElementById("Logo")
-    if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
-      Logo.style.height = '48px';
-      Logo.style.width = '90px';
-    } else {
-      Logo.style.width = '170px';      
-      Logo.style.height = '89px';
-    }
+window.onscroll = function () {
+  growShrinkLogo()
+};
+
+function growShrinkLogo() {
+  var Logo = document.getElementById("Logo")
+  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+    Logo.style.height = '48px';
+    Logo.style.width = '90px';
+  } else {
+    Logo.style.width = '170px';
+    Logo.style.height = '89px';
   }
+}
 
 //   $('a[href^="#"]').on('click', function(event) {
 //     var target = $(this.getAttribute('href'));
@@ -25,7 +25,7 @@ window.onscroll = function() {
 
 //  $(document).ready(function($) {
 //   var page_url = window.location.href;
-//   var page_id = page_url.substring(page_url.lastIndexOf("#")+1);
+//   var page_id = page_url.substring(page_url.lastIndexOf("/")+1);
 //   window.console.log(page_url);
 
 //     $('html, body').stop().animate({
@@ -34,57 +34,160 @@ window.onscroll = function() {
 
 //   });
 
+$(document).ready(function () {
+  redirect();
+});
 
-  $(document).ready(function(){
-   
-    $('#main').load("main-page.html");
- 
- });
+$(window).bind('hashchange', function () {
+  redirect();
+});
 
- function toTop(){
+function redirect() {
+  var page_url = window.location.href;
+  var page_id = page_url.substring(page_url.lastIndexOf("#") + 1);
+  window.console.log(page_url);
+
+  if (page_id === "biznesowa") {
+    $("#main").load("biznesowa.html");
+    $('html, body').stop().animate({
+      scrollTop: 0
+    }, 500);
+  }
+
+  if (page_id === "medyczna") {
+    $("#main").load("medyczna.html");
+    $('html, body').stop().animate({
+      scrollTop: 0
+    }, 500);
+  }
+
+  if (page_id === "film") {
+    $("#main").load("film.html");
+    $('html, body').stop().animate({
+      scrollTop: 0
+    }, 500);
+  }
+
+  if (page_id === "glowna") {
+    $("#main").load("main-page.html");
+    $('html, body').stop().animate({
+      scrollTop: 0
+    }, 1000);
+  }
+}
+
+function animateToOnas() {
+loadMain().then(() => {
+  // var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#") + 1);
+  // window.location.href = page_url + "glowna";
+    $('html, body').stop().animate({
+      scrollTop: $("#scroll-oNas").offset().top - 70
+    }, 1000);
+})  
+}
+
+function loadMain() {
+  return new Promise(function(resolve){
+    $("#main").load("main-page.html");
+    return resolve();
+  })
+}
+
+function animateToNaszeProjekty() {
+  $("#main").load("main-page.html");
   $('html, body').stop().animate({
-    scrollTop: 0
-}, 1000);
- }
+    scrollTop: $("#scroll-naszeProjekty").offset().top - 70
+  }, 1000);
+}
+
+function animateToKontakt() {
+  $("#main").load("main-page.html");
+  $('html, body').stop().animate({
+    scrollTop: $("#scroll-kontakt").offset().top - 70
+  }, 1000);
+}
+
+//  $(document).ready(function($) {
+//     $('a').on('click', function () {
+//   var page_url = window.location.href;
+//   var target = $(this.getAttribute('href')).substring(page_url.lastIndexOf("/") + 1);
+//       console.log(target);
+//       if (target.length) {
+//         event.preventDefault();
+//         $('html, body').stop().animate({
+//           scrollTop: target.offset().top - 115
+//         }, 1000);
+//       }
+//     });
+
+//   if(page_id==="biznesowa"){
+//     $("#main").load("biznesowa.html");
+//     $('html, body').stop().animate({
+//       scrollTop: 0
+//   }, 200);  }
+
+//   if(page_id==="medyczna"){
+//     $("#main").load("medyczna.html");
+//     $('html, body').stop().animate({
+//       scrollTop: 0
+//   }, 200);  }
+
+//   if(page_id==="film"){
+//     $("#main").load("film.html");
+//     $('html, body').stop().animate({
+//       scrollTop: 0
+//   }, 200);  }
+
+//   if(page_id==="glowna#"){
+//     $("#main").load("index.html");
+//     $('html, body').stop().animate({
+//       scrollTop: 0
+//   }, 200);  }
+// })
+//   });
+
+//  function toTop(){
+//   $('html, body').stop().animate({
+//     scrollTop: 0
+// }, 1000);
+//  }
 
  function toBiznesowa(){
   $("#main").load("biznesowa.html");
   $('html, body').stop().animate({
     scrollTop: 0
-}, 200);
+}, 500);
 };
 
 function toMedyczna(){
   $("#main").load("medyczna.html");
   $('html, body').stop().animate({
     scrollTop: 0
-}, 200);
+}, 500);
 };
 
 function toFilm(){
   $("#main").load("film.html");
   $('html, body').stop().animate({
     scrollTop: 0
-}, 200);
+}, 500);
 };
 
-  $(document).ready(function(){
-    $(".main-page").click(function(){
-      $("#main").load("main-page.html");
-      $('a[href^="#"]').on('click', function(event) {
-        var target = $(this.getAttribute('href'));
-        if( target.length ) {
-            event.preventDefault();
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top - 115
-            }, 1000);
-        }
-    });
-    });
-  });
+// $(document).ready(function () {
+//   $('a[href^="#"]').on('click', function (event) {
+//     var target = $(this.getAttribute('href')).substring(page_url.lastIndexOf("/") + 1);
+//     console.log(target);
+//     if (target.length) {
+//       event.preventDefault();
+//       $('html, body').stop().animate({
+//         scrollTop: target.offset().top - 115
+//       }, 1000);
+//     }
+//   });
+// });
 
 
-  // Open the Modal
+// Open the Modal
 function openModal() {
   document.getElementById("myModal").style.display = "block";
 }
@@ -112,17 +215,17 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
   var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
   //$(document).ready(function($) {
@@ -132,7 +235,7 @@ function showSlides(n) {
     //          }
     //      });
     //  });
-    
+
 //  // Cache selectors
 // var lastId,
 //     topMenu = $("#top-menu"),
@@ -160,7 +263,7 @@ function showSlides(n) {
 // $(window).scroll(function(){
 //    // Get container scroll position
 //    var fromTop = $(this).scrollTop()+topMenuHeight;
-   
+
 //    // Get id of current scroll item
 //    var cur = scrollItems.map(function(){
 //      if ($(this).offset().top < fromTop)
@@ -169,7 +272,7 @@ function showSlides(n) {
 //    // Get the id of the current element
 //    cur = cur[cur.length-1];
 //    var id = cur && cur.length ? cur[0].id : "";
-   
+
 //    if (lastId !== id) {
 //        lastId = id;
 //        // Set/remove active class
