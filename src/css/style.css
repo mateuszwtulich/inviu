@@ -13,69 +13,81 @@ body {
     width: 30px;
     height: 30px;
     border: 1px solid #59595b; }
-  body #top {
-    z-index: 1 !important; }
-    body #top .navbar {
-      max-width: 1460px;
-      margin-left: auto;
-      margin-right: auto; }
-      body #top .navbar .navbar-toggler {
-        border-color: #59595b !important; }
-      body #top .navbar .nabar-toggler:hover {
-        background-color: #cfcfcf !important; }
-      body #top .navbar #Logo {
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -ms-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out; }
-      body #top .navbar .nav-item {
-        padding-left: 10px;
-        -moz-border-radius: 0px;
-        -webkit-border-radius: 0px;
-        border-radius: 0px;
-        margin: 0; }
-      body #top .navbar .nav-flex-icons a:hover,
-      body #top .navbar .nav-flex-icons a:active {
-        color: #b00047 !important; }
-      body #top .navbar i.fa {
-        border-radius: 60px;
-        box-shadow: 0px 0px 5px #b00047;
-        padding: 0.3em 0.4em; }
-      body #top .navbar i.fa:hover {
-        box-shadow: #b00047;
-        background-color: #e2007a;
-        color: #fff; }
-      body #top .navbar i.fa-facebook {
-        border-radius: 60px;
-        box-shadow: 0px 0px 5px #b00047;
-        padding: 0.3em 0.54em; }
-      body #top .navbar #navbarSocialMedia li a {
-        color: #e2007a !important; }
-      body #top .navbar .navbar-nav #top-menu li.active a {
-        color: #151517 !important; }
-      body #top .navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
-        background-color: #cfcfcf !important;
-        opacity: 1;
-        cursor: pointer; }
-      body #top .navbar .navbar-nav .dropdown-menu .collapsing {
-        display: block; }
-      body #top .navbar .navbar-nav a:hover,
-      body #top .navbar .navbar-nav a:active {
-        color: #151517 !important; }
-      body #top .navbar .navbar-nav li a {
-        text-shadow: #59595b;
-        color: #59595b !important;
-        cursor: pointer !important;
-        font-size: large;
-        font-weight: 500; }
+  body #top .navbar {
+    z-index: 2 !important;
+    max-width: 1460px;
+    margin-left: auto;
+    margin-right: auto; }
+    body #top .navbar .navbar-toggler {
+      border-color: #59595b !important; }
+    body #top .navbar .nabar-toggler:hover {
+      background-color: #cfcfcf !important; }
+    body #top .navbar #Logo {
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+    body #top .navbar .nav-item {
+      padding-left: 10px;
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      margin: 0; }
+    body #top .navbar .nav-flex-icons a:hover,
+    body #top .navbar .nav-flex-icons a:active {
+      color: #b00047 !important; }
+    body #top .navbar i.fa {
+      border-radius: 60px;
+      box-shadow: 0px 0px 5px #b00047;
+      padding: 0.3em 0.4em; }
+    body #top .navbar i.fa:hover {
+      box-shadow: #b00047;
+      background-color: #e2007a;
+      color: #fff; }
+    body #top .navbar i.fa-facebook {
+      border-radius: 60px;
+      box-shadow: 0px 0px 5px #b00047;
+      padding: 0.3em 0.54em; }
+    body #top .navbar #navbarSocialMedia li a {
+      color: #e2007a !important; }
+    body #top .navbar .navbar-nav #top-menu li.active a {
+      color: #151517 !important; }
+    body #top .navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
+      background-color: #cfcfcf !important;
+      opacity: 1;
+      cursor: pointer; }
+    body #top .navbar .navbar-nav .dropdown-menu .collapsing {
+      display: block; }
+    body #top .navbar .navbar-nav a:hover,
+    body #top .navbar .navbar-nav a:active {
+      color: #151517 !important; }
+    body #top .navbar .navbar-nav li a {
+      text-shadow: #59595b;
+      color: #59595b !important;
+      cursor: pointer !important;
+      font-size: large;
+      font-weight: 500; }
   body #content {
     z-index: 1 !important; }
+    body #content .album .card img {
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      transition: transform 1s; }
+    body #content .album .card:hover img {
+      transform: scale(1.1);
+      cursor: pointer; }
+    body #content .album .card {
+      overflow: visible;
+      text-align: center;
+      justify-content: center; }
     body #content h1 {
       color: #59595b;
       font-size: xx-large;
       font-weight: 500; }
     body #content #carouselIndicators {
+      z-index: 1 !important;
       margin-top: 7.2rem; }
       body #content #carouselIndicators .carousel-inner {
         width: 100%;
@@ -132,16 +144,16 @@ body {
         body #content #scroll-oNas #oNasText {
           padding-left: 7%;
           padding-right: 7%; } }
-    body #content #naszeProjekty .card {
+    body #content #scroll-naszeProjekty .card {
       -moz-border-radius: 0px;
       -webkit-border-radius: 0px;
       border-radius: 0px;
       border: none; }
-      body #content #naszeProjekty .card .box {
+      body #content #scroll-naszeProjekty .card .box {
         overflow: hidden;
         text-align: center;
         justify-content: center; }
-      body #content #naszeProjekty .card .box button {
+      body #content #scroll-naszeProjekty .card .box button {
         position: absolute;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
@@ -150,39 +162,39 @@ body {
         transition: transform 0.5s ease;
         text-align: center;
         opacity: 0; }
-      body #content #naszeProjekty .card .box:hover button {
+      body #content #scroll-naszeProjekty .card .box:hover button {
         opacity: 1; }
-      body #content #naszeProjekty .card .box:hover img {
+      body #content #scroll-naszeProjekty .card .box:hover img {
         transform: scale(1.2);
         opacity: 80%; }
-      body #content #naszeProjekty .card .box img {
+      body #content #scroll-naszeProjekty .card .box img {
         -moz-border-radius: 0px;
         -webkit-border-radius: 0px;
         border-radius: 0px;
         transition: transform 1s; }
-      body #content #naszeProjekty .card .card-body button {
+      body #content #scroll-naszeProjekty .card .card-body button {
         font-weight: 500;
         padding: 0%;
         border-width: 0px;
         font-size: 18px;
         background-color: transparent !important;
         color: #8c8c8e; }
-        body #content #naszeProjekty .card .card-body button :hover {
+        body #content #scroll-naszeProjekty .card .card-body button :hover {
           background-color: #fff !important;
           color: #59595b; }
-        body #content #naszeProjekty .card .card-body button :focus {
+        body #content #scroll-naszeProjekty .card .card-body button :focus {
           background-color: #fff !important;
           color: #59595b !important; }
-      body #content #naszeProjekty .card .card-body .card-title a {
+      body #content #scroll-naszeProjekty .card .card-body .card-title a {
         font-size: 25px;
         font-weight: 500;
         color: #59595b; }
-      body #content #naszeProjekty .card .card-body .card-title:hover {
+      body #content #scroll-naszeProjekty .card .card-body .card-title:hover {
         cursor: pointer;
         text-decoration: underline; }
-      body #content #naszeProjekty .card .card-body .card-text {
+      body #content #scroll-naszeProjekty .card .card-body .card-text {
         text-align: justify; }
-      body #content #naszeProjekty .card button {
+      body #content #scroll-naszeProjekty .card button {
         text-shadow: #151517;
         box-shadow: #59595b;
         opacity: 85%;
@@ -282,3 +294,106 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly; }
+
+/* Gallery View */
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3 !important;
+  text-align: center !important;
+  align-content: center !important;
+  justify-content: center !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(22, 22, 22, 0.5);
+  /* 50% opaque blue */
+  /* transparent */ }
+
+/* Modal Content */
+.modal-content {
+  z-index: 4 !important;
+  position: relative;
+  border-radius: 0%;
+  border-width: 0ch;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px; }
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 35px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer; }
+
+/* Hide the slides by default */
+.mySlides {
+  display: none; }
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white !important;
+  font-weight: bold;
+  font-size: 25px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none; }
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px; }
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8); }
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #fff;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0; }
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white; }
+
+img.demo {
+  opacity: 0.6; }
+
+.active,
+.demo:hover {
+  opacity: 1; }
+
+img.hover-shadow {
+  transition: 0.3s; }
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }

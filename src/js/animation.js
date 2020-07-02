@@ -45,67 +45,104 @@ $(window).bind('hashchange', function () {
 function redirect() {
   var page_url = window.location.href;
   var page_id = page_url.substring(page_url.lastIndexOf("#") + 1);
-  window.console.log(page_url);
 
-  if (page_id === "biznesowa") {
+  if(!page_url.includes("#")){
+    $("#main").load("main-page.html");
+    $('html, body').stop().animate({
+      scrollTop: 0
+    }, 1000);
+  }
+  else if (page_id === "biznesowa") {
     $("#main").load("biznesowa.html");
     $('html, body').stop().animate({
       scrollTop: 0
     }, 500);
   }
-
-  if (page_id === "medyczna") {
+  else if (page_id === "medyczna") {
     $("#main").load("medyczna.html");
     $('html, body').stop().animate({
       scrollTop: 0
     }, 500);
-  }
-
-  if (page_id === "film") {
+  } 
+  else if (page_id === "film") {
     $("#main").load("film.html");
     $('html, body').stop().animate({
       scrollTop: 0
     }, 500);
-  }
-
-  if (page_id === "glowna") {
-    $("#main").load("main-page.html");
-    $('html, body').stop().animate({
-      scrollTop: 0
-    }, 1000);
-  }
+  }   
 }
 
 function animateToOnas() {
-loadMain().then(() => {
-  // var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#") + 1);
-  // window.location.href = page_url + "glowna";
+  loadMain();
+  sleep(10).then(() => {
     $('html, body').stop().animate({
       scrollTop: $("#scroll-oNas").offset().top - 70
     }, 1000);
-})  
-}
-
-function loadMain() {
-  return new Promise(function(resolve){
-    $("#main").load("main-page.html");
-    return resolve();
   })
 }
 
 function animateToNaszeProjekty() {
-  $("#main").load("main-page.html");
   $('html, body').stop().animate({
-    scrollTop: $("#scroll-naszeProjekty").offset().top - 70
+    scrollTop: $("#scroll-naszeProjekty").offset().top - 110
+  }, 1000);
+}
+
+function animateToLogo() {
+  loadMain();
+  $('html, body').stop().animate({
+    scrollTop: 0
   }, 1000);
 }
 
 function animateToKontakt() {
-  $("#main").load("main-page.html");
+  loadMain();
+  sleep(20).then(() => {
   $('html, body').stop().animate({
     scrollTop: $("#scroll-kontakt").offset().top - 70
   }, 1000);
+});
 }
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function loadMain() {
+    if(window.location.href.includes("#")){
+      var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
+      window.location.href = page_url;
+      $("#main").load("main-page.html");
+    }
+    // window.location.href = page_url;
+}
+
+function toBiznesowa(){
+  var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
+  window.location.href = page_url + "#biznesowa";
+  $("#main").load("biznesowa.html");
+  $('html, body').stop().animate({
+    scrollTop: 0
+}, 500);
+};
+
+function toMedyczna(){
+  var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
+  window.location.href = page_url + "#medyczna";
+  $("#main").load("medyczna.html");
+  $('html, body').stop().animate({
+    scrollTop: 0
+}, 500);
+};
+
+function toFilm(){
+  var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
+  window.location.href = page_url + "#film";
+  $("#main").load("film.html");
+  $('html, body').stop().animate({
+    scrollTop: 0
+}, 500);
+};
+
 
 //  $(document).ready(function($) {
 //     $('a').on('click', function () {
@@ -151,27 +188,6 @@ function animateToKontakt() {
 //     scrollTop: 0
 // }, 1000);
 //  }
-
- function toBiznesowa(){
-  $("#main").load("biznesowa.html");
-  $('html, body').stop().animate({
-    scrollTop: 0
-}, 500);
-};
-
-function toMedyczna(){
-  $("#main").load("medyczna.html");
-  $('html, body').stop().animate({
-    scrollTop: 0
-}, 500);
-};
-
-function toFilm(){
-  $("#main").load("film.html");
-  $('html, body').stop().animate({
-    scrollTop: 0
-}, 500);
-};
 
 // $(document).ready(function () {
 //   $('a[href^="#"]').on('click', function (event) {
