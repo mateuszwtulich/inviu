@@ -74,11 +74,9 @@ function redirect() {
 
 function animateToOnas() {
   loadMain();
-  sleep(10).then(() => {
     $('html, body').stop().animate({
       scrollTop: $("#scroll-oNas").offset().top - 70
     }, 1000);
-  })
 }
 
 function animateToNaszeProjekty() {
@@ -96,11 +94,10 @@ function animateToLogo() {
 
 function animateToKontakt() {
   loadMain();
-  sleep(20).then(() => {
+  // sleep(20).then(() => {
   $('html, body').stop().animate({
     scrollTop: $("#scroll-kontakt").offset().top - 70
   }, 1000);
-});
 }
 
 function sleep(ms) {
@@ -142,52 +139,6 @@ function toFilm(){
     scrollTop: 0
 }, 500);
 };
-
-
-//  $(document).ready(function($) {
-//     $('a').on('click', function () {
-//   var page_url = window.location.href;
-//   var target = $(this.getAttribute('href')).substring(page_url.lastIndexOf("/") + 1);
-//       console.log(target);
-//       if (target.length) {
-//         event.preventDefault();
-//         $('html, body').stop().animate({
-//           scrollTop: target.offset().top - 115
-//         }, 1000);
-//       }
-//     });
-
-//   if(page_id==="biznesowa"){
-//     $("#main").load("biznesowa.html");
-//     $('html, body').stop().animate({
-//       scrollTop: 0
-//   }, 200);  }
-
-//   if(page_id==="medyczna"){
-//     $("#main").load("medyczna.html");
-//     $('html, body').stop().animate({
-//       scrollTop: 0
-//   }, 200);  }
-
-//   if(page_id==="film"){
-//     $("#main").load("film.html");
-//     $('html, body').stop().animate({
-//       scrollTop: 0
-//   }, 200);  }
-
-//   if(page_id==="glowna#"){
-//     $("#main").load("index.html");
-//     $('html, body').stop().animate({
-//       scrollTop: 0
-//   }, 200);  }
-// })
-//   });
-
-//  function toTop(){
-//   $('html, body').stop().animate({
-//     scrollTop: 0
-// }, 1000);
-//  }
 
 // $(document).ready(function () {
 //   $('a[href^="#"]').on('click', function (event) {
