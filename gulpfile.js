@@ -33,7 +33,7 @@ gulp.task('sassProd', async () =>
 );
 
 gulp.task('jsProd', function() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
+    return gulp.src(['src/js/*.js'])
         .pipe(gulp.dest("dist/js"))
         .pipe(browserSync.stream());
 });
@@ -66,10 +66,10 @@ gulp.task('serve', gulp.series('sass', 'js', async() => {
         // open: false,
     });
 
-    gulp.watch(['src/js/animation.js'], gulp.series('js'));
+    gulp.watch(['src/js/main.js'], gulp.series('js'));
     gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], gulp.series('sass'));
     gulp.watch(["src/*.html"]).on('change', browserSync.reload);
 }))  
 
-gulp.task('default', gulp.parallel('copyHtml', 'imageMin', 'minify', 'sassProd', 'jsProd'));
+gulp.task('default', gulp.parallel('copyHtml', 'imageMin', 'sassProd', 'jsProd'));
 

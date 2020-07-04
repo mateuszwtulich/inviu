@@ -13,27 +13,6 @@ function growShrinkLogo() {
   }
 }
 
-//   $('a[href^="#"]').on('click', function(event) {
-//     var target = $(this.getAttribute('href'));
-//     if( target.length ) {
-//         event.preventDefault();
-//         $('html, body').stop().animate({
-//             scrollTop: target.offset().top - 150
-//         }, 1000);
-//     }
-// });
-
-//  $(document).ready(function($) {
-//   var page_url = window.location.href;
-//   var page_id = page_url.substring(page_url.lastIndexOf("/")+1);
-//   window.console.log(page_url);
-
-//     $('html, body').stop().animate({
-//         scrollTop: $("#scroll-" + page_id).offset().top + 50
-//     }, 1000);
-
-//   });
-
 $(document).ready(function () {
   redirect();
 });
@@ -110,7 +89,6 @@ function loadMain() {
       window.location.href = page_url;
       $("#main").load("main-page.html");
     }
-    // window.location.href = page_url;
 }
 
 function toBiznesowa(){
@@ -139,20 +117,6 @@ function toFilm(){
     scrollTop: 0
 }, 500);
 };
-
-// $(document).ready(function () {
-//   $('a[href^="#"]').on('click', function (event) {
-//     var target = $(this.getAttribute('href')).substring(page_url.lastIndexOf("/") + 1);
-//     console.log(target);
-//     if (target.length) {
-//       event.preventDefault();
-//       $('html, body').stop().animate({
-//         scrollTop: target.offset().top - 115
-//       }, 1000);
-//     }
-//   });
-// });
-
 
 // Open the Modal
 function openModal() {
@@ -195,13 +159,13 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
-  //$(document).ready(function($) {
-    //   $('menu li a').click(function() {
-    //          if ( ($(this).hasClass('menu-link-class')) && (!$(this).parent().hasClass('dropdown'))){
-    //              $(this).closest('.nav-bar').removeClass('nav-open');
-    //          }
-    //      });
-    //  });
+  $(document).ready(function($) {
+      $('menu li a').click(function() {
+             if ( ($(this).hasClass('menu-link-class')) && (!$(this).parent().hasClass('dropdown'))){
+                 $(this).closest('.nav-bar').removeClass('nav-open');
+             }
+         });
+     });
 
 //  // Cache selectors
 // var lastId,
