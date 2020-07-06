@@ -12,7 +12,7 @@ gulp.task('copyHtml', async () =>
 
 // Optimize Images
 gulp.task('imageMin', async () =>
-    gulp.src('src/images/*')
+    gulp.src(['src/images/*','src/images/biznesowa/*', 'src/images/produktowa/*', 'src/images/medyczna/*'])
         .pipe(imagemin())
         .pipe(gulp.dest('dist/images'))
 );
@@ -46,7 +46,7 @@ gulp.task('sass', async () =>
 );
 
 gulp.task('js', async () =>
-    gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
+    gulp.src(['node_modules/bootstrap/dist/js/bootstrap.js', 'node_modules/jquery/dist/jquery.js', 'node_modules/popper.js/dist/umd/popper.js'])
         .pipe(gulp.dest("src/js"))
         .pipe(browserSync.stream())
 );

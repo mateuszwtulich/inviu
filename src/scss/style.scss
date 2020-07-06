@@ -200,7 +200,7 @@ body {
     }
 
     .main-section{
-      margin: 2rem;
+      margin: 3.5% !important;
     }
 
     #scroll-oNas {
@@ -440,7 +440,10 @@ body {
     }
 
     #footerContent {
-      margin: 2rem 2rem 0;
+      margin-left: 3.5%;
+      margin-right: 3.5%;
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
       color: #fff;
       background-color: #e2007a;
 
@@ -462,11 +465,11 @@ body {
             margin-top: 0.5rem;
           }          
           
-          @media (max-width: 424px) {
-            .footer-button{
-              margin-top: 1.25rem;
-            }
-          }
+          // @media (max-width: 424px) {
+          //   .footer-button{
+          //     margin-top: 1.25rem;
+          //   }
+          // }
 
         }
       }
@@ -496,26 +499,26 @@ body {
 }
 
 #biznesowa{
-  margin-top: 9.2rem;
+  margin-top: 8.2rem;
 
   #content{
-    margin: 2rem;
-  }
+    margin: 3.5%
+    }
 }
 
 #medyczna{
-  margin-top: 9.2rem;
+  margin-top: 8.2rem;
 
   #content{
-    margin: 2rem;
+    margin: 3.5%  
   }
 }
 
 #film{
-  margin-top: 9.2rem;
+  margin-top: 8.2rem;
 
   #content{
-    margin: 2rem;
+    margin: 3.5%;
 
     .flex-row{
       display: flex;
@@ -524,6 +527,8 @@ body {
     }
   }
 }
+
+.row:before, .row:after {display: none !important;}
 
 /* Gallery View */
 
@@ -539,6 +544,13 @@ body {
   overflow: auto;
   background-color: rgba(22, 22, 22, 0.5);	/* 50% opaque blue */
   		/* transparent */
+}
+
+.close {
+  width: 4rem;
+  height: 4rem;
+  justify-content: center;
+  align-content: center;
 }
 
 .modal-wrapper{
