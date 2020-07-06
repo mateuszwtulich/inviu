@@ -15,6 +15,10 @@ function growShrinkLogo() {
 
 $(document).ready(function () {
   redirect();
+  $('.second-button').on('click', function () {
+
+    $('.animated-icon2').toggleClass('open');
+  });
 });
 
 $(window).bind('hashchange', function () {
@@ -24,6 +28,7 @@ $(window).bind('hashchange', function () {
 function redirect() {
   var page_url = window.location.href;
   var page_id = page_url.substring(page_url.lastIndexOf("#") + 1);
+  $('.animated-icon2').removeClass('open');
 
   if (!page_url.includes("#")) {
     $("#main").load("main-page.html");
@@ -53,25 +58,24 @@ function redirect() {
 
 function animateToOnas() {
   loadMain();
-  sleep(20).then(() => {
+  sleep(100).then(() => {
     $('html, body').stop().animate({
-      scrollTop: $("#scroll-oNas").offset().top - 70
+      scrollTop: $("#scroll-oNas").offset().top - 86
     }, 1000);
   })
 }
 
 function animateToNaszeProjekty() {
   if (!window.location.href.includes("#")) {
-    sleep(20).then(() => {
       $('html, body').stop().animate({
         scrollTop: $("#scroll-naszeProjekty").offset().top - 110
       }, 1000);
-    })
   }
 }
 
 function animateToLogo() {
   loadMain();
+  closeDropdown();
   $('html, body').stop().animate({
     scrollTop: 0
   }, 1000);
@@ -79,9 +83,9 @@ function animateToLogo() {
 
 function animateToKontakt() {
   loadMain();
-  sleep(20).then(() => {
+  sleep(100).then(() => {
     $('html, body').stop().animate({
-      scrollTop: $("#scroll-kontakt").offset().top - 70
+      scrollTop: $("#scroll-kontakt").offset().top - 86
     }, 1000);
   })
 }
@@ -91,10 +95,11 @@ function sleep(ms) {
 }
 
 function loadMain() {
+  $('.animated-icon2').removeClass('open');
   if (window.location.href.includes("#")) {
-    var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
-    window.location.href = page_url;
     $("#main").load("main-page.html");
+    var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("/"));
+    history.pushState({}, null, page_url)
   }
 }
 
@@ -166,17 +171,11 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
-// $(document).ready(function($) {
-//     $('menu li a').click(function() {
-//            if ( ($(this).hasClass('menu-link-class')) && (!$(this).parent().hasClass('dropdown'))){
-//                $(this).closest('.nav-bar').removeClass('nav-open');
-//            }
-//        });
-//    });
-
 function closeDropdown() {
-  $(".navbar-collapse").collapse('hide');
-  $(".dropdown-toggle").dropdown('toggle');
+  if($(".dropdown-menu").hasClass("show")){
+    $(".navbar-collapse").collapse('hide');
+    $(".dropdown-toggle").dropdown('toggle');
+  }
 }
 
 //  // Cache selectors

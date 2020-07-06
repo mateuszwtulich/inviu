@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/hamburger.css">
     <link rel='stylesheet' href="css/style.css">
     <link rel='stylesheet' href="lightbox.min.css">
     <link rel='icon' href="images/inviu_logo.png">
@@ -31,25 +32,25 @@
     <header id="top">
         <nav class="navbar fixed-top navbar-expand-md navbar-light scrolling-navbar bg-white no-gutters p-2 shadow-lg">
             <div class="col-lg-4 col-md-2 col-4 order-md-2 text-center">
-                <a class="navbar-brand" type="button" onclick="animateToLogo()">
+                <a class="navbar-brand" onclick="animateToLogo()">
                     <img src="images/inviu_logo.png" width="170" height="89" class="p-0" id="Logo" /></a>
             </div>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
+            <button class="navbar-toggler second-button" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent,#navbarSocialMedia"
                 aria-controls="navbarSupportedContent,navbarSocialMedia" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
             </button>
 
             <div class="collapse navbar-collapse col-lg-4 col-md-5 order-md-1 text-left" id="navbarSupportedContent">
                 <ul class="navbar-nav text-center" id="top-menu">
                     <li class="nav-item">
-                        <a type="button" onclick="animateToOnas()" class="nav-link main-page" id="oNasButton"
+                        <a  onclick="animateToOnas()" class="nav-link main-page" id="oNasButton"
                             data-toggle="collapse" data-target=".navbar-collapse.show">O nas</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a type="button" onclick="animateToNaszeProjekty()" class="nav-link dropdown-toggle"
+                        <a  onclick="animateToNaszeProjekty()" class="nav-link dropdown-toggle"
                             id="navbarDropdownMenuLink" data-toggle="collapse" data-target="#items" aria-haspopup="true"
                             aria-expanded="false" id="naszeProjektyButton">Nasze
                             projekty
@@ -65,7 +66,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a type="button" onclick="animateToKontakt()" class="nav-link main-page" id="kontaktButton"
+                        <a  onclick="animateToKontakt()" class="nav-link main-page" id="kontaktButton"
                             data-toggle="collapse" data-target=".navbar-collapse.show">Kontakt</a>
                     </li>
                 </ul>
@@ -110,7 +111,7 @@
                             <img src="images/medyczna/inviu_fotografia_medyczna_31.jpg" class="d-block w-100" alt="Fotografia medyczna">
                             <div class="carousel-caption d-none d-sm-block">
                                 <h5>Fotografia medyczna</h5>
-                                <a class="btn btn-secondary btn-lg shadow-lg" type="button" onclick="toMedyczna()"
+                                <a class="btn btn-secondary btn-lg shadow-lg" onclick="toMedyczna()"
                                     href="#medyczna">Zobacz więcej <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
@@ -118,7 +119,7 @@
                             <img src="images/biznesowa/inviu_fotografia_biznesowa_04.jpg" class="d-block w-100" alt="Fotografia biznesowa">
                             <div class="carousel-caption d-none d-sm-block">
                                 <h5>Fotografia biznesowa</h5>
-                                <a type="button" onclick="toBiznesowa()" href="#biznesowa"
+                                <a onclick="toBiznesowa()" href="#biznesowa"
                                     class="btn btn-secondary btn-lg shadow-lg">Zobacz więcej <i
                                         class="fa fa-angle-right"></i></a>
                             </div>
@@ -127,7 +128,7 @@
                             <img src="images/biznesowa/inviu_fotografia_biznesowa_21.jpg" class="d-block w-100" alt="Film">
                             <div class="carousel-caption d-none d-sm-block">
                                 <h5>Film</h5>
-                                <a type="button" onclick="toFilm()" href="#film"
+                                <a onclick="toFilm()" href="#film"
                                     class="btn btn-secondary btn-lg shadow-lg">Zobacz
                                     więcej <i class="fa fa-angle-right"></i></a>
                             </div>
@@ -182,13 +183,13 @@
                                         <div class="card p-0 pl-2 pr-2">
                                             <div class="box">
                                                 <img src="images/img4.jpg" class="card-img-top img-fluid" alt=" ...">
-                                                <button type="button" onclick="toMedyczna()" href="#medyczna"
+                                                <button  onclick="toMedyczna()" href="#medyczna"
                                                     class="btn btn-secondary shadow-lg">Galeria <i
                                                         class="fa fa-angle-right"></i>
                                                 </button>
                                             </div>
                                             <div class="card-body p-0 pt-3">
-                                                <h5 class="card-title"><a type="button" onclick="toMedyczna()"
+                                                <h5 class="card-title"><a onclick="toMedyczna()"
                                                         href="#medyczna">Fotografia
                                                         medyczna</a></h5>
                                                 <p class="card-text">Specjalizujemy się w wykonywaniu zdjęć szpitali i
@@ -217,7 +218,7 @@
                                                 </button>
                                             </div>
                                             <div class="card-body p-0 pt-3">
-                                                <h5 class="card-title"><a href="#biznesowa" type="button"
+                                                <h5 class="card-title"><a href="#biznesowa"
                                                         onclick="toBiznesowa()">Fotografia
                                                         biznesowa</a></h5>
                                                 <p class="card-text">Strona internetowa, portale branżowe, Facebook,
@@ -245,7 +246,7 @@
                                                 </button>
                                             </div>
                                             <div class="card-body p-0 pt-3">
-                                                <h5 class="card-title"><a type="button" onclick="toFilm()" href="#film">Film</a>
+                                                <h5 class="card-title"><a onclick="toFilm()" href="#film">Film</a>
                                                 </h5>
                                                 <p class="card-text">Obecnie to właśnie materiały wideo, takie jak filmy
                                                     instruktażowe, szkoleniowe, wizerunkowe oraz
