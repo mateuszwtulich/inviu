@@ -15,6 +15,10 @@ function growShrinkLogo() {
 
 $(document).ready(function () {
   redirect();
+  $('.second-button').on('click', function () {
+
+    $('.animated-icon2').toggleClass('open');
+  });
 });
 
 $(window).bind('hashchange', function () {
@@ -24,8 +28,9 @@ $(window).bind('hashchange', function () {
 function redirect() {
   var page_url = window.location.href;
   var page_id = page_url.substring(page_url.lastIndexOf("#") + 1);
+  $('.animated-icon2').removeClass('open');
 
-  if(!page_url.includes("#")){
+  if (!page_url.includes("#")) {
     $("#main").load("main-page.html");
     $('html, body').stop().animate({
       scrollTop: 0
@@ -42,30 +47,35 @@ function redirect() {
     $('html, body').stop().animate({
       scrollTop: 0
     }, 500);
-  } 
+  }
   else if (page_id === "film") {
     $("#main").load("film.html");
     $('html, body').stop().animate({
       scrollTop: 0
     }, 500);
-  }   
+  }
 }
 
 function animateToOnas() {
   loadMain();
+  sleep(100).then(() => {
     $('html, body').stop().animate({
-      scrollTop: $("#scroll-oNas").offset().top - 70
+      scrollTop: $("#scroll-oNas").offset().top - 86
     }, 1000);
+  })
 }
 
 function animateToNaszeProjekty() {
-  $('html, body').stop().animate({
-    scrollTop: $("#scroll-naszeProjekty").offset().top - 110
-  }, 1000);
+  if (!window.location.href.includes("#")) {
+      $('html, body').stop().animate({
+        scrollTop: $("#scroll-naszeProjekty").offset().top - 110
+      }, 1000);
+  }
 }
 
 function animateToLogo() {
   loadMain();
+  closeDropdown();
   $('html, body').stop().animate({
     scrollTop: 0
   }, 1000);
@@ -73,10 +83,11 @@ function animateToLogo() {
 
 function animateToKontakt() {
   loadMain();
-  // sleep(20).then(() => {
-  $('html, body').stop().animate({
-    scrollTop: $("#scroll-kontakt").offset().top - 70
-  }, 1000);
+  sleep(100).then(() => {
+    $('html, body').stop().animate({
+      scrollTop: $("#scroll-kontakt").offset().top - 86
+    }, 1000);
+  })
 }
 
 function sleep(ms) {
@@ -84,38 +95,39 @@ function sleep(ms) {
 }
 
 function loadMain() {
-    if(window.location.href.includes("#")){
-      var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
-      window.location.href = page_url;
-      $("#main").load("main-page.html");
-    }
+  $('.animated-icon2').removeClass('open');
+  if (window.location.href.includes("#")) {
+    $("#main").load("main-page.html");
+    var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("/"));
+    history.pushState({}, null, page_url)
+  }
 }
 
-function toBiznesowa(){
+function toBiznesowa() {
   var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
   window.location.href = page_url + "#biznesowa";
   $("#main").load("biznesowa.html");
   $('html, body').stop().animate({
     scrollTop: 0
-}, 500);
+  }, 500);
 };
 
-function toMedyczna(){
+function toMedyczna() {
   var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
   window.location.href = page_url + "#medyczna";
   $("#main").load("medyczna.html");
   $('html, body').stop().animate({
     scrollTop: 0
-}, 500);
+  }, 500);
 };
 
-function toFilm(){
+function toFilm() {
   var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
   window.location.href = page_url + "#film";
   $("#main").load("film.html");
   $('html, body').stop().animate({
     scrollTop: 0
-}, 500);
+  }, 500);
 };
 
 // Open the Modal
@@ -159,13 +171,12 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
-  $(document).ready(function($) {
-      $('menu li a').click(function() {
-             if ( ($(this).hasClass('menu-link-class')) && (!$(this).parent().hasClass('dropdown'))){
-                 $(this).closest('.nav-bar').removeClass('nav-open');
-             }
-         });
-     });
+function closeDropdown() {
+  if($(".dropdown-menu").hasClass("show")){
+    $(".navbar-collapse").collapse('hide');
+    $(".dropdown-toggle").dropdown('toggle');
+  }
+}
 
 //  // Cache selectors
 // var lastId,
