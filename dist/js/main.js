@@ -75,10 +75,12 @@ function animateToNaszeProjekty() {
 
 function animateToLogo() {
   loadMain();
+  sleep(100).then(() => {
   closeDropdown();
   $('html, body').stop().animate({
     scrollTop: 0
   }, 1000);
+})
 }
 
 function animateToKontakt() {
@@ -172,8 +174,9 @@ function showSlides(n) {
 }
 
 function closeDropdown() {
-  if($(".dropdown-menu").hasClass("show")){
-    $(".navbar-collapse").collapse('hide');
+  if($(".navbar-collapse").hasClass("show")){
+    // $(".navbar-collapse").collapse('hide');
+    $(".navbar-collapse").removeClass('show');
     $(".dropdown-toggle").dropdown('toggle');
   }
 }
