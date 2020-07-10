@@ -22,13 +22,26 @@ body {
   margin-right: auto;
 
   #fixed-button {
+    z-index: 3;
     position: absolute;
-    right: 5%;
-    bottom: 20%;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #59595b;
+    position: fixed;
+    right: 10%;
+    bottom: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    width: 4rem;
+    height: 4rem;
+    border: 0.4rem solid $primary;
+    cursor: pointer;
+    visibility: hidden;
+    box-shadow: 0px 0px 5px$primary-dark;
+  }
+
+  #arrow{
+    color: $secondary;
+    font-size: 200%;
   }
 
   #top {
@@ -571,13 +584,13 @@ body {
 
 /* Modal Content */
 .modal-content {
-  z-index: 4 !important;
+  z-index: 5 !important;
   position: relative;
   border-radius: 0%;
   border-width: 0ch;
   margin: auto;
   padding: 0;
-  width: 80%;
+  width: 95%;
   max-width: 1300px;
 }
 
@@ -589,6 +602,7 @@ body {
   right: 0.3rem;
   font-size: 4.5rem;
   font-weight: bold;
+  z-index: 6 !important;
 }
 
 .close:hover,

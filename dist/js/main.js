@@ -4,12 +4,15 @@ window.onscroll = function () {
 
 function growShrinkLogo() {
   var Logo = document.getElementById("Logo")
+  var fixed = document.getElementById("fixed-button")
   if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
     Logo.style.height = '48px';
     Logo.style.width = '90px';
+    fixed.style.visibility = 'visible';
   } else {
     Logo.style.width = '170px';
     Logo.style.height = '89px';
+    fixed.style.visibility = 'hidden';
   }
 }
 
@@ -36,13 +39,13 @@ function redirect() {
       scrollTop: 0
     }, 1000);
   }
-  else if (page_id === "biznesowa") {
+  else if (page_id === "fotografia-biznesowa") {
     $("#main").load("biznesowa.html");
     $('html, body').stop().animate({
       scrollTop: 0
     }, 500);
   }
-  else if (page_id === "medyczna") {
+  else if (page_id === "fotografia-medyczna") {
     $("#main").load("medyczna.html");
     $('html, body').stop().animate({
       scrollTop: 0
@@ -59,6 +62,7 @@ function redirect() {
 function animateToOnas() {
   loadMain();
   sleep(100).then(() => {
+    closeDropdownMenu();
     $('html, body').stop().animate({
       scrollTop: $("#scroll-oNas").offset().top - 86
     }, 1000);
@@ -67,25 +71,26 @@ function animateToOnas() {
 
 function animateToNaszeProjekty() {
   if (!window.location.href.includes("#")) {
-      $('html, body').stop().animate({
-        scrollTop: $("#scroll-naszeProjekty").offset().top - 110
-      }, 1000);
+    $('html, body').stop().animate({
+      scrollTop: $("#scroll-naszeProjekty").offset().top - 110
+    }, 1000);
   }
 }
 
 function animateToLogo() {
   loadMain();
   sleep(100).then(() => {
-  closeDropdown();
-  $('html, body').stop().animate({
-    scrollTop: 0
-  }, 1000);
-})
+    closeNavbarAndDropdown();
+    $('html, body').stop().animate({
+      scrollTop: 0
+    }, 1000);
+  })
 }
 
 function animateToKontakt() {
   loadMain();
   sleep(100).then(() => {
+    closeDropdownMenu();
     $('html, body').stop().animate({
       scrollTop: $("#scroll-kontakt").offset().top - 86
     }, 1000);
@@ -107,7 +112,8 @@ function loadMain() {
 
 function toBiznesowa() {
   var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
-  window.location.href = page_url + "#biznesowa";
+  window.location.href = page_url + "#fotografia-biznesowa";
+  closeNavbarAndDropdown();
   $("#main").load("biznesowa.html");
   $('html, body').stop().animate({
     scrollTop: 0
@@ -116,7 +122,8 @@ function toBiznesowa() {
 
 function toMedyczna() {
   var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
-  window.location.href = page_url + "#medyczna";
+  window.location.href = page_url + "#fotografia-medyczna";
+  closeNavbarAndDropdown();
   $("#main").load("medyczna.html");
   $('html, body').stop().animate({
     scrollTop: 0
@@ -126,31 +133,25 @@ function toMedyczna() {
 function toFilm() {
   var page_url = window.location.href.substring(0, window.location.href.lastIndexOf("#"));
   window.location.href = page_url + "#film";
+  closeNavbarAndDropdown();
   $("#main").load("film.html");
   $('html, body').stop().animate({
     scrollTop: 0
   }, 500);
 };
 
-// Open the Modal
 function openModal() {
   document.getElementById("myModal").style.display = "block";
 }
 
-// Close the Modal
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
@@ -169,16 +170,29 @@ function showSlides(n) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  captionText.innerHTML = dots[slideIndex - 1].alt;
+  // dots[slideIndex - 1].className += " active";
+  // captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
-function closeDropdown() {
-  if($(".navbar-collapse").hasClass("show")){
-    // $(".navbar-collapse").collapse('hide');
+function closeNavbarAndDropdown() {
+  if ($(".navbar-collapse").hasClass("show")) {
     $(".navbar-collapse").removeClass('show');
     $(".dropdown-toggle").dropdown('toggle');
   }
+  closeDropdownMenu();
+}
+
+function closeDropdownMenu() {
+  if ($(".dropdown-menu").hasClass("show")) {
+    $(".dropdown-menu").removeClass('show');
+  }
+}
+
+function toTop(){
+  $('html, body').stop().animate({
+    scrollTop: 0
+  }, 800);
+    closeNavbarAndDropdown();
 }
 
 //  // Cache selectors
